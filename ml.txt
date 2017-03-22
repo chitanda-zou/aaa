@@ -1,0 +1,33 @@
+weakClasser<T U>
+in:
+void **feature<T>   要保证数据由小到大排好序
+void **label<U>    （>0是正样本 其他是负样本）	    标签和数据一样的顺序排好序
+*weight （加权的数据）
+sampleCounts
+featureCounts
+//stopth 停止阈值？ -1 表示找到最好的为止
+
+out:
+featureIndex
+dir(-1> or 1<)
+split
+err
+errIndex      误分类的索引vector<unsigned int>
+method:
+train:
+test:
+returnRes:
+
+assert 检查参数
+编写代码...使用assert的缺点是,频繁的调用会极大的影响程序的性能,增加额外的开销
+
+
+写一个函数 专门给weakclasser 用来扩展label--》labelmap
+
+adaboost 的接口也是接受 void * feature 和 void * label
+
+如果使用决策树桩 作为弱分类器 
+那么久一定要调用这个扩展label的函数
+
+这样接口久统一了
+
